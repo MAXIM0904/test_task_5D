@@ -1,0 +1,6 @@
+fastapi==0.115.7
+pydantic==2.10.6
+uvicorn==0.21.1
+pydantic_settings==2.8.1
+pyshorteners==1.0.1
+pydantic-settings~=2.8.1
