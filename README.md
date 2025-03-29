@@ -15,6 +15,8 @@ http://{host}:{port}/docs
 
 ### 3 - Async Client
 
+In the file async_client/confit.py enter the URL and BASE_URL
+
 - cd async_client
 - pip install -r requirements.txt
 - python client.py
