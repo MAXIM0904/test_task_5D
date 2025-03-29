@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi import HTTPException, status
 
 
-class ResponseModel(BaseModel):
+class UrlModel(BaseModel):
     url: str | None = Field(default=None)
 
 
@@ -14,7 +14,7 @@ def answers(
 ):
     return JSONResponse(
         status_code=code_status,
-        content=ResponseModel(
+        content=UrlModel(
             url=url_text
         ).__dict__
     )

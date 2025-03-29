@@ -1,6 +1,6 @@
 ﻿from fastapi import APIRouter
 
-from app_task.api.v1.endpoints.transmitted_url import trans_url_router
+from api.v1.endpoints.transmitted_url import trans_url_router
 
 router_v1 = APIRouter()
 

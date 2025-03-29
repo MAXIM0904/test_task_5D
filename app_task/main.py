@@ -11,21 +11,7 @@ app = FastAPI(
     docs_url="/docs",
     contact={
         "name": service_setting.service_name
-    },
-    openapi_tags=[
-        {
-            "name": "Email",
-            "description": "Отправка сообщений c помощью email address",
-        },
-        # {
-        #     "name": "JWT",
-        #     "description": "Отправка сообщений с помощью jwt token",
-        # },
-        {
-            "name": "Task Scheduler",
-            "description": "Планировщик отправки сообщений",
-        },
-    ],
+    }
 )
 
 app.include_router(router_v1, prefix="/v1")

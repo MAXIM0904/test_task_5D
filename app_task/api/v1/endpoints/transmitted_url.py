@@ -1,7 +1,7 @@
 import pyshorteners
 from fastapi import APIRouter, status
-from app_task.api.v1.schemas.url_schema import answers
-from app_task.core.config import service_setting
+from api.v1.schemas.url_schema import answers, UrlModel
+from core.config import service_setting
 
 trans_url_router = APIRouter()
 
@@ -41,7 +41,7 @@ trans_url_router = APIRouter()
     """
 )
 async def post_trans_url(
-    url: str
+    url: UrlModel
 ):
     """
     The method accepts the URL string for shortening in the request body.
@@ -52,7 +52,7 @@ async def post_trans_url(
             shortened url
     """
     object = pyshorteners.Shortener(api_key=service_setting.token)
-    link = object.bitly.short(url)
+    link = object.bitly.short(url.url)
     return answers(
         code_status=status.HTTP_201_CREATED,
         url_text=link
